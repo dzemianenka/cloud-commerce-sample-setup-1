@@ -1,0 +1,19 @@
+@charset "utf-8";
+@import "./support/sapcustombackofficewidget-variables.scss";
+
+.yw-labelstyle
+{
+	color: $sapcustombackoffice-label-text-color;
+}
+
+.sapcustombackoffice-container {
+	background: $sapcustombackoffice-container-background;
+	font-family: $sapcustombackoffice-container-font-family;
+	font-size: $sapcustombackoffice-container-font-size;
+}
+
+.firework-container {
+	background: $sapcustombackoffice-container-background;
+	font-family: $sapcustombackoffice-container-font-family;
+	font-size: $sapcustombackoffice-container-font-size;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<config xmlns="http://www.hybris.com/cockpit/config"
+		xmlns:et="http://www.hybris.com/cockpitng/config/explorertree">
+
+	<!-- sapcustombackoffice UI configuration should be provided here -->
+
+	<!--<context component="component-code" module="sapcustombackoffice">-->
+		<!--Please check documentation for code snippets for specific components-->
+	<!--</context>-->
+
+<!--		<context component="explorer-tree">-->
+<!--			<et:explorer-tree>-->
+<!--				<et:navigation-node id="training_sapcustombackofficewidget" position="0"/>-->
+<!--			</et:explorer-tree>-->
+<!--		</context>-->
+
+
+
+</config>

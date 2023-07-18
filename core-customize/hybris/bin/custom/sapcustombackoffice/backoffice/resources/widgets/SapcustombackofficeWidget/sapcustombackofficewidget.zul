@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns="http://www.zkoss.org/2005/zul"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:h="http://www.w3.org/1999/xhtml"
+		xmlns:w="http://www.zkoss.org/2005/zk/client"
+		xmlns:zk="http://www.zkoss.org/2005/zk"
+		xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.hybris.com/schema/cockpitng/zul/zul.xsd"
+		height="100%">
+
+	<div class="firework-container" style="padding: 30px;">
+		<grid>
+			<rows>
+				<row>
+					<cell>Client Name:</cell>
+					<cell colspan="4"><label id="clientName"/></cell>
+				</row>
+
+				<row>
+					<cell>Business Id:</cell>
+					<cell colspan="4"><label id="businessId"/></cell>
+				</row>
+
+				<row>
+					<cell colspan="2" style="text-align:center">
+						<vlayout>
+							<button id="refreshFireworkOAuth" label="Connect to firework" />
+						</vlayout>
+					</cell>
+
+					<cell colspan="2" style="text-align:center">
+						<vlayout>
+							<button id="resetFireworkOAuth" label="Reset data" />
+						</vlayout>
+					</cell>
+				</row>
+			</rows>
+		</grid>
+	</div>
+</widget>

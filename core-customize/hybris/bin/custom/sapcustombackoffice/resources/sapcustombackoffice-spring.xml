@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!--
+	The hybris platform provides one single Spring application context for beans located at the jalo layer.
+	Each extension can add beans to this context by specifying them at this configuration file.
+
+	You can use and/or redefine beans defined at configuration files of other extensions as well as
+	adding new one.
+
+	If you want to locate this file at a different location or want to use several files for better,
+	structuring, please use the '<yourextension>.application-context' property at your project.properties file.
+	There you can specify a comma separated list of files where first is tried to find a file per classpath and
+	then per file system.
+
+
+	If you want to configure beans for your web module please have a look at
+	your web/webroot/WEB-INF/<extname>-web-spring.xml.
+	-->
+
+	<!--  Example how to override a manager -->
+	<!--
+	<bean id="core.productManager"   class="com.hybris.backoffice.jalo.YbackofficeProductManager" 	init-method="init"	destroy-method="destroy" />
+	-->
+
+
+ 	<!--  Example how to configure the class to use for jalo session creation -->
+	<!--
+	<bean id="jalosession"   class="de.hybris.platform.jalo.JaloSessionFactory">
+		<property name="targetClassName" value="com.hybris.backoffice.jalo.YbackofficeJaloSession"/>
+	</bean>
+	-->
+
+
+	<!--  Example how to override an item  -->
+	<!--
+	<bean id="de.hybris.platform.jalo.product.Product" class="com.hybris.backoffice.jalo.YbackofficeProduct" scope="prototype" />
+ 	-->
+
+	<!--
+	 Example how to register and use an AOP aspect
+     Also see http://static.springframework.org/spring/docs/2.5.x/reference/aop.html
+     -->
+
+	<!--
+	<bean id="sapcustombackofficeProfBean" class="com.hybris.backoffice.aop.YbackofficeProfilingAspect"/>
+	<aop:config proxy-target-class="true">
+  		<aop:aspect id="sapcustombackofficeProfAspect" ref="sapcustombackofficeProfBean" >
+    	  <aop:pointcut id="profiledMethods"
+	      	expression="execution(* getModificationTime(..))" />
+	   		<aop:around pointcut-ref="profiledMethods" method="profile" />
+  		</aop:aspect>
+	</aop:config>
+	 -->
+
+
+	<!-- some other examples of a pointcut that matches everything:
+
+    	  <aop:pointcut id="profiledMethods"
+	      	expression="bean(de.hybris.platform.jalo.user.Customer) &amp;&amp;
+	      	            !execution(* getPK(..))" />
+	       <aop:pointcut id="profiledMethods" expression="execution(* *(..))" />
+	  -->
+
+<!--	<alias name="fireworkOAuthFlowFacade" alias="fireworkOAuthFlowFacade"/>-->
+<!--	<bean id="fireworkOAuthFlowFacade" class="firework.facade.impl.FireworkOAuthFlowFacadeImpl">-->
+<!--		<constructor-arg name="restTemplate" ref="restTemplate"/>-->
+<!--		<constructor-arg name="fwOAuthAppService" ref="fwOAuthAppService"/>-->
+<!--		<constructor-arg name="redirectionDataPreparer" ref="redirectionDataPreparer"/>-->
+<!--	</bean>-->
+
+<!--	<bean id="fwApiCredentialsService" class="firework.service.impl.FwApiCredentialsServiceImpl">-->
+<!--		<constructor-arg name="fwApiCredentialsDao" ref="fwApiCredentialsDao"/>-->
+<!--		<constructor-arg name="fwApiCredentialsMapper" ref="fwApiCredentialsMapper"/>-->
+<!--	</bean>-->
+
+
+<!--	<bean id="fwOAuthAppService" class="firework.service.impl.FwOAuthAppServiceImpl">-->
+<!--		<constructor-arg name="fwOAuthAppDao" ref="fwOAuthAppDao"/>-->
+<!--		<constructor-arg name="fwOAuthAppMapper" ref="fwOAuthAppMapper"/>-->
+<!--	</bean>-->
+
+<!--	<bean id="redirectionDataPreparer" class="firework.service.impl.RedirectionDataPreparerImpl"/>-->
+
+<!--	<bean id="fwApiCredentialsDao" class="firework.dao.impl.FwApiCredentialsDaoImpl">-->
+<!--		<constructor-arg name="flexibleSearchService" ref="flexibleSearchService"/>-->
+<!--		<constructor-arg name="modelService" ref="modelService"/>-->
+<!--	</bean>-->
+
+<!--	<bean id="fwOAuthAppDao" class="firework.dao.impl.FwOAuthAppDaoImpl">-->
+<!--		<constructor-arg name="flexibleSearchService" ref="flexibleSearchService"/>-->
+<!--		<constructor-arg name="modelService" ref="modelService"/>-->
+<!--	</bean>-->
+
+<!--	<bean id="fwApiCredentialsMapper" class="firework.mapper.impl.FwApiCredentialsMapperImpl"/>-->
+
+<!--	<bean id="fwOAuthAppMapper" class="firework.mapper.impl.FwOAuthAppMapperImpl"/>-->
+
+<!--	<bean id="businessStoreClient" class="firework.client.BusinessStoreClient">-->
+<!--		<constructor-arg name="businessStoreQueryMapper" ref="businessStoreQueryMapper"/>-->
+<!--		<constructor-arg name="restTemplate" ref="restTemplate"/>-->
+<!--		<constructor-arg name="fireworkBaseUrl" value="${firework.api.url}"/>-->
+<!--		<constructor-arg name="fwOAuthAppService" ref="fwOAuthAppService"/>-->
+<!--	</bean>-->
+
+<!--	<bean id="businessStoreQueryMapper" class="firework.mapper.impl.BusinessStoreQueryMapperImpl">-->
+<!--		<constructor-arg name="fwOAuthAppService" ref="fwOAuthAppService"/>-->
+<!--		<constructor-arg name="provider" value="${firework.api.fields.generalName}"/>-->
+<!--		<constructor-arg name="configurationWatchService" ref="configurationWatchService"/>-->
+<!--	</bean>-->
+<!--	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>-->
+
+<!--	<bean id="configurationWatchService" class="firework.service.impl.ConfigurationWatchServiceImpl">-->
+<!--		<constructor-arg name="configurationService" ref="defaultConfigurationService"/>-->
+<!--	</bean>-->
+
+<!--	<bean id="tokensRefreshingJob" class="firework.job.TokensRefreshingJob">-->
+<!--		<constructor-arg name="fwOAuthAppService" ref="fwOAuthAppService"/>-->
+<!--		<constructor-arg name="restTemplate" ref="restTemplate"/>-->
+<!--		<property name="flexibleSearchService" ref="flexibleSearchService"/>-->
+<!--		<property name="modelService" ref="modelService"/>-->
+<!--		<property name="sessionService" ref="sessionService"/>-->
+<!--	</bean>-->
+
+<!--	<alias name="afterSaveCustomEventListener" alias="afterSaveCustomEventListener"/>-->
+<!--	<bean id="afterSaveCustomEventListener"-->
+<!--		  class="firework.event.ProductsChangingListener">-->
+<!--		<constructor-arg ref="itemModelSearchService"/>-->
+<!--		<constructor-arg ref="fireworkWebhookClient"/>-->
+<!--	</bean>-->
+
+<!--	<alias name="itemModelSearchService" alias="itemModelSearchService"/>-->
+<!--	<bean id="itemModelSearchService"-->
+<!--		  class="de.hybris.platform.integrationservices.service.impl.DefaultItemModelSearchService">-->
+<!--		<constructor-arg name="modelService" ref="modelService"/>-->
+<!--	</bean>-->
+
+<!--	<alias name="fireworkWebhookClient" alias="fireworkWebhookClient"/>-->
+<!--	<bean id="fireworkWebhookClient"-->
+<!--		  class="firework.client.FireworkWebhookClient">-->
+<!--		<constructor-arg name="restTemplate" ref="restTemplate"/>-->
+<!--	</bean>-->
+
+
+</beans>

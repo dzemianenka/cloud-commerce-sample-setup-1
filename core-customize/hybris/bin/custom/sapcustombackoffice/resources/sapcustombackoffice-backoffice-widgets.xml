@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widgets.xsd">
+
+    <widget-extension widgetId="backofficeMainSlot">
+        <widget id="sapcustombackoffice-perspective" widgetDefinitionId="org.leverx.sapcustombackoffice.widgets.sapcustombackofficewidget"
+            template="false" slotId="perspectives" title="Firework OAuth Flow">
+        </widget>
+    </widget-extension>
+<!--    <widget-extension widgetId="backoffice_content_container">-->
+<!--        <widget id="sapcustombackofficewidget"-->
+<!--                widgetDefinitionId="org.leverx.sapcustombackoffice.widgets.sapcustombackofficewidget"-->
+<!--                slotId="perspectives" title="Firework OAuth Flow">-->
+<!--            <setting key="relatedExplorerTreeNode" value="training_sapcustombackofficewidget"/>-->
+<!--        </widget>-->
+<!--        &lt;!&ndash;        </widget>&ndash;&gt;-->
+<!--    </widget-extension>-->
+
+<!--    <widget-connection sourceWidgetId = "explorerTree"-->
+<!--                       inputId="nodeSelected" outputId="nodeSelected" targetWidgetId="sapcustombackofficewidget"/>-->
+
+<!--    <widget-connection sourceWidgetId = "sapcustombackofficewidget"-->
+<!--                       inputId="selectPerspectiveById" outputId="selectPerspectiveById" targetWidgetId="backoffice_content_container"/>-->
+
+</widgets>
