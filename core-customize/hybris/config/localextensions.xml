@@ -254,6 +254,8 @@
     <extension name='kiwi' />
 	<extension name= 'spartacussampledata' />
     <extension name='tiger'/>
+  	<extension name='firework' />
+  	<extension name='sapcustombackoffice' />
 
 <!-- For more information where to find those extensions: -->
 <!-- https://launchpad.support.sap.com/#/notes/2817992 -->

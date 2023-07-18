@@ -338,6 +338,10 @@
                     "contextPath": "/medias"
                 },
                 {
+                    "name": "firework",
+                    "contextPath": "/firework"
+                },
+                {
                     "name": "acceleratorservices",
                     "contextPath": "/acceleratorservices"
                 },
